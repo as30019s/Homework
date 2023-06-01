@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Homework
 {
     public partial class Homework_09_Frm : Form
@@ -107,7 +108,7 @@ namespace Homework
                     {
                         countCol++;
                     }
-                    if (layout[i, i] == layout[x, y])
+                    if (layout[2-i, i] == layout[x, y])
                     {
                         countSlash++;
                     }
@@ -124,7 +125,7 @@ namespace Homework
                     {
                         countCol++;
                     }
-                    if (layout[i, i] == layout[x, y])
+                    if (layout[i, 2-i] == layout[x, y])
                     {
                         countSlash++;
                     }
@@ -263,8 +264,40 @@ namespace Homework
                 MessageBox.Show($"{user}獲勝");
                 currentUserCheck = true;
                 result = false;
+                layout = new string[3, 3];
                 Controls.Clear();
                 InitializeComponent();
+            }
+        }
+
+        private void btn_reset_Click(object sender, EventArgs e)
+        {
+            currentUserCheck = true;
+            result = false;
+            layout = new string[3, 3];
+            Controls.Clear();
+            InitializeComponent();
+        }
+
+        private void btn_exit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+
+        private void Homework_09_Frm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == 82)
+            {
+                currentUserCheck = true;
+                result = false;
+                layout = new string[3, 3];
+                Controls.Clear();
+                InitializeComponent();
+            }
+            if (e.KeyValue == 27)
+            {
+                this.Close();
             }
         }
     }

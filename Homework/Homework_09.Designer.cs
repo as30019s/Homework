@@ -159,6 +159,7 @@
             this.btn_reset.TabIndex = 10;
             this.btn_reset.Text = "Reset(R)";
             this.btn_reset.UseVisualStyleBackColor = true;
+            this.btn_reset.Click += new System.EventHandler(this.btn_reset_Click);
             // 
             // btn_exit
             // 
@@ -168,6 +169,7 @@
             this.btn_exit.TabIndex = 11;
             this.btn_exit.Text = "Exit(Esc)";
             this.btn_exit.UseVisualStyleBackColor = true;
+            this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
             // 
             // Homework_09_Frm
             // 
@@ -186,8 +188,10 @@
             this.Controls.Add(this.btn_OX_10);
             this.Controls.Add(this.label_title);
             this.Controls.Add(this.btn_OX_00);
+            this.KeyPreview = true;
             this.Name = "Homework_09_Frm";
             this.Text = "Myhomework_XOGame";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Homework_09_Frm_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
