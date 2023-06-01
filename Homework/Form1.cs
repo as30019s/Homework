@@ -10,9 +10,10 @@ using System.Windows.Forms;
 
 namespace Homework
 {
-    public partial class Form1 : Form
+    public partial class Frm_guess : Form
     {
-        public Form1()
+        string input = "";
+        public Frm_guess()
         {
             InitializeComponent();
         }

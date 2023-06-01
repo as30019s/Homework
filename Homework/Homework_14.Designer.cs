@@ -63,6 +63,7 @@
             this.btn_showAns.TabIndex = 2;
             this.btn_showAns.Text = "Show Answer";
             this.btn_showAns.UseVisualStyleBackColor = true;
+            this.btn_showAns.Click += new System.EventHandler(this.btn_showAns_Click);
             // 
             // Homework_14_Frm
             // 

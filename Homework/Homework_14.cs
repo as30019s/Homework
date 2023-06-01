@@ -14,8 +14,8 @@ namespace Homework
     {
         Random rand = new Random();
         int answer;
-        int max = 100, min = 1;
-        bool checkResult = true;
+        int max, min;
+        bool checkResult;
         
         public Homework_14_Frm()
         {
@@ -26,33 +26,48 @@ namespace Homework
 
         private void btn_guess_Click(object sender, EventArgs e)
         {
+            checkResult = true;
+            max = 100;
+            min = 1;
+
             int guessNumber;
             bool isNum;
             string input = "";
+
             while (checkResult)
             {
-                ShowInputDialogBox(ref input, "Please input a number.", "Guess");
+                DialogResult checkDialogResult = ShowInputDialogBox(ref input, "Please input a number.", "Guess");
+                if (checkDialogResult == DialogResult.Cancel)
+                {
+                    label_title.Text = "Please input a number.";
+                    answer = rand.Next(1, 101);
+                    return;
+                }
                 isNum = int.TryParse(input, out guessNumber);
                 if (isNum)
                 {
-                    if (guessNumber < min ||  guessNumber > max)
+                    if (guessNumber < min || guessNumber > max)
                     {
                         MessageBox.Show($"請輸入{min}到{max}之間的整數!!!");
                     }
-                    if (guessNumber == answer)
+                    else if (guessNumber == answer)
                     {
                         checkResult = !checkResult;
                         MessageBox.Show($"Congradulations!!! You got {answer}!!!");
-                    } else if (guessNumber < answer)
+                        label_title.Text = "Please input a number.";
+                        answer = rand.Next(1, 101);
+                    }
+                    else if (guessNumber < answer)
                     {
                         min = guessNumber;
                         label_title.Text = $"Too Small!!!\nBetween {min} and {max}";
-                    } else
+                    }
+                    else
                     {
                         max = guessNumber;
                         label_title.Text = $"Too Small!!!\nBetween {min} and {max}";
                     }
-                } 
+                }
                 else
                 {
                     MessageBox.Show($"請輸入{min}到{max}之間的整數!!!");
@@ -61,6 +76,10 @@ namespace Homework
             }
         }
 
+        private void btn_showAns_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show($"數字是{answer}");
+        }
 
         private static DialogResult ShowInputDialogBox(ref string input, string prompt, string title = "Title", int width = 400, int height = 150)
         {
@@ -75,7 +94,7 @@ namespace Homework
             inputBox.ClientSize = size;
             //Set the window title using the parameter passed
             inputBox.Text = title;
-            inputBox.Location = new Point(500, 500);
+            inputBox.StartPosition = FormStartPosition.CenterParent;
 
             //Create a new label to hold the prompt
             Label label = new Label();
@@ -113,16 +132,12 @@ namespace Homework
             cancelButton.Location = new Point(285, 70);
             inputBox.Controls.Add(cancelButton);
 
-
-
-
             //Set the input box's buttons to the created OK and Cancel Buttons respectively so the window appropriately behaves with the button clicks
             inputBox.AcceptButton = okButton;
             inputBox.CancelButton = cancelButton;
 
             //Show the window dialog box 
             DialogResult result = inputBox.ShowDialog();
-            inputBox.Update();
             input = textBox.Text;
 
 
