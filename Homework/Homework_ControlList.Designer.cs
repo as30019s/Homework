@@ -33,6 +33,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btn_homework_11 = new System.Windows.Forms.Button();
             this.btn_homework_14 = new System.Windows.Forms.Button();
             this.btn_homework_09 = new System.Windows.Forms.Button();
             this.btn_homework_08 = new System.Windows.Forms.Button();
@@ -43,7 +44,6 @@
             this.btn_homework_01 = new System.Windows.Forms.Button();
             this.btn_homework_02 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btn_homework_11 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -128,6 +128,16 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(264, 532);
             this.panel2.TabIndex = 4;
+            // 
+            // btn_homework_11
+            // 
+            this.btn_homework_11.Location = new System.Drawing.Point(31, 312);
+            this.btn_homework_11.Name = "btn_homework_11";
+            this.btn_homework_11.Size = new System.Drawing.Size(200, 23);
+            this.btn_homework_11.TabIndex = 9;
+            this.btn_homework_11.Text = "Homework_11_Notepad";
+            this.btn_homework_11.UseVisualStyleBackColor = true;
+            this.btn_homework_11.Click += new System.EventHandler(this.btn_homework_11_Click);
             // 
             // btn_homework_14
             // 
@@ -227,15 +237,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1156, 532);
             this.panel3.TabIndex = 0;
-            // 
-            // btn_homework_11
-            // 
-            this.btn_homework_11.Location = new System.Drawing.Point(31, 312);
-            this.btn_homework_11.Name = "btn_homework_11";
-            this.btn_homework_11.Size = new System.Drawing.Size(200, 23);
-            this.btn_homework_11.TabIndex = 9;
-            this.btn_homework_11.Text = "Homework_11_Notepad";
-            this.btn_homework_11.UseVisualStyleBackColor = true;
             // 
             // Homework_ControlList
             // 
