@@ -17,7 +17,7 @@ namespace Homework
         public int unitPrice;
     }
 
-    public class Stuents
+    public struct Students
     {
         public string Name;
         public int ChScore;

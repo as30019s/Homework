@@ -187,6 +187,28 @@ namespace Homework
             splitContainer2.Panel2.Controls.Add(frm_09);
 
         }
+        private void btn_homework_11_Click(object sender, EventArgs e)
+        {
+            // close other opening form
+            while (splitContainer2.Panel2.Controls.Count > 0)
+                splitContainer2.Panel2.Controls[0].Dispose();
+
+            Homework_11_Frm frm_11 = new Homework_11_Frm();
+
+            //非最上層
+            frm_11.TopLevel = false;
+
+            //顯示From，要加上去才會顯示Form
+            frm_11.Visible = true;
+
+            //設定From位置
+            frm_11.Top = 0;
+            frm_11.Left = 0;
+
+            splitContainer2.Panel2.Controls.Add(frm_11);
+
+        }
+
 
         private void btn_homework_14_Click(object sender, EventArgs e)
         {
@@ -208,5 +230,6 @@ namespace Homework
 
             splitContainer2.Panel2.Controls.Add(frm_14);
         }
+
     }
 }

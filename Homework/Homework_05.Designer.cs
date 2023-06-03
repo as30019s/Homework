@@ -106,6 +106,7 @@
             this.btn_randomAddData.TabIndex = 5;
             this.btn_randomAddData.Text = "隨機儲存資料";
             this.btn_randomAddData.UseVisualStyleBackColor = true;
+            this.btn_randomAddData.Click += new System.EventHandler(this.btn_randomAddData_Click);
             // 
             // btn_statistic
             // 
@@ -169,7 +170,7 @@
             this.panel1.Controls.Add(this.splitContainer1);
             this.panel1.Location = new System.Drawing.Point(157, 33);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(495, 257);
+            this.panel1.Size = new System.Drawing.Size(522, 257);
             this.panel1.TabIndex = 13;
             // 
             // splitContainer1
@@ -186,7 +187,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.textB_result);
-            this.splitContainer1.Size = new System.Drawing.Size(491, 253);
+            this.splitContainer1.Size = new System.Drawing.Size(518, 253);
             this.splitContainer1.SplitterDistance = 25;
             this.splitContainer1.TabIndex = 0;
             // 
@@ -196,9 +197,9 @@
             this.textB_title.Font = new System.Drawing.Font("標楷體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.textB_title.Location = new System.Drawing.Point(0, 0);
             this.textB_title.Name = "textB_title";
-            this.textB_title.Size = new System.Drawing.Size(491, 23);
+            this.textB_title.Size = new System.Drawing.Size(518, 23);
             this.textB_title.TabIndex = 0;
-            this.textB_title.Text = "姓名        國文    英文    數學    總分    平均      最低      最高";
+            this.textB_title.Text = "姓名      國文    英文    數學    總分    平均      最低      最高";
             // 
             // textB_result
             // 
@@ -208,7 +209,7 @@
             this.textB_result.Multiline = true;
             this.textB_result.Name = "textB_result";
             this.textB_result.ReadOnly = true;
-            this.textB_result.Size = new System.Drawing.Size(384, 22);
+            this.textB_result.Size = new System.Drawing.Size(514, 22);
             this.textB_result.TabIndex = 0;
             // 
             // Homework_05_Frm

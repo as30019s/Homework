@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,19 +8,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace Homework
 {
     public partial class Homework_05_Frm : Form
     {
-        string chName;
-        int chScore;
-        int enScore;
-        int mathScore;
+        List<Students> lsStudent = new List<Students>();
         string[] subjects = new string[3] { "國文", "英文", "數學" };
-        int[] scores;
-        string result = "";
-        int totalScore = 0;
 
         public Homework_05_Frm()
         {
@@ -29,18 +25,82 @@ namespace Homework
 
         private void btn_addData_Click(object sender, EventArgs e)
         {
-            chName = textB_name.Text;
+            string chName;
+            int chScore;
+            int enScore;
+            int mathScore;
+
+            if (textB_chScore.Text == "")
+            {
+                MessageBox.Show("請輸入名子");
+                return;
+            }
+            else
+            {
+                chName = textB_name.Text;
+            }
+
             if (int.TryParse(textB_chScore.Text, out chScore) && int.TryParse(textB_enScore.Text, out enScore) && int.TryParse(textB_mathScore.Text, out mathScore))
             {
-                scores = new int[3] { chScore, enScore, mathScore };
-                result += $"  {chName} ";
+                if (chScore < 0 || chScore > 100 || enScore < 0 || enScore > 100 || mathScore < 0 || mathScore > 100)
+                {
+                    MessageBox.Show("請填入正確成績，成績介於0~100。", "輸入錯誤", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    chScore = 0;
+                    enScore = 0;
+                    mathScore = 0;
+                    textB_chScore.Text = 0.ToString();
+                    textB_enScore.Text = 0.ToString();
+                    textB_mathScore.Text = 0.ToString();
+                    return;
+                }
+                else
+                {
+                    scoreMethod(chName, chScore,enScore,mathScore);
+                }
+            }
+            else
+            {
+                MessageBox.Show("請填入正確成績，成績介於0~100。", "輸入錯誤", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                chScore = 0;
+                enScore = 0;
+                mathScore = 0;
+                textB_chScore.Text = 0.ToString();
+                textB_enScore.Text = 0.ToString();
+                textB_mathScore.Text = 0.ToString();
+                return;
+            }
+
+
+
+        }
+        private void btn_randomAddData_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public void scoreMethod(string chName, int chScore, int enScore, int mathScore)
+        {
+            Students stu;
+            string result = "";
+            int totalScore = 0;
+
+            stu.Name = chName;
+            stu.ChScore = chScore;
+            stu.EnScore = enScore;
+            stu.MathScore = mathScore;
+            lsStudent.Add(stu);
+
+            foreach (Students S in lsStudent)
+            {
+                int[] scores = new int[3] { S.ChScore, S.EnScore, S.MathScore };
+                result += $"{chName,-4} ";
                 totalScore = 0;
                 for (int i = 0; i < 3; i++)
                 {
-                    result += $"{scores[i]}    ";
+                    result += $"{scores[i],8}";
                     totalScore += scores[i];
                 }
-                result += $"{totalScore} {Math.Round(Convert.ToDouble(totalScore) / 3,1)} ";
+                result += $"{totalScore,8} {Math.Round(Convert.ToDouble(totalScore) / 3, 1),7} ";
 
                 int maxScore = 0;
                 int minScore = 0;
@@ -68,7 +128,7 @@ namespace Homework
                 }
                 if (maxScore == minScore)
                 {
-                    result += $"{chScore}\r\n";
+                    result += $"各科成績相同：{S.ChScore,2}\r\n";
                 }
                 else
                 {
@@ -83,31 +143,10 @@ namespace Homework
                             minScoreSubject += $"{subjects[i]} ";
                         }
                     }
-                    result += $" {maxScoreSubject}{maxScore}    ";
-                    result += $" {minScoreSubject}{minScore}\r\n";
+                    result += $" {minScoreSubject,4}{minScore}    ";
+                    result += $" {maxScoreSubject}{maxScore}\r\n";
                 }
 
-            }
-            else
-            {
-                MessageBox.Show("請填入正確成績，成績介於0~100。", "輸入錯誤", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                chScore = 0;
-                enScore = 0;
-                mathScore = 0;
-                textB_chScore.Text = 0.ToString();
-                textB_enScore.Text = 0.ToString();
-                textB_mathScore.Text = 0.ToString();
-            }
-
-            if (chScore < 0 || chScore > 100 || enScore < 0 || enScore > 100 || mathScore < 0 || mathScore > 100)
-            {
-                MessageBox.Show("請填入正確成績，成績介於0~100。", "輸入錯誤", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                chScore = 0;
-                enScore = 0;
-                mathScore = 0;
-                textB_chScore.Text = 0.ToString();
-                textB_enScore.Text = 0.ToString();
-                textB_mathScore.Text = 0.ToString();
             }
             if (textB_result.Height < 200)
             {
@@ -117,9 +156,7 @@ namespace Homework
             {
             }
             textB_result.BorderStyle = BorderStyle.FixedSingle;
-            textB_result.Text = result ;
+            textB_result.Text = result;
         }
-
-
     }
 }
