@@ -63,6 +63,16 @@ namespace Homework.Properties {
         /// <summary>
         ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         /// </summary>
+        internal static System.Drawing.Bitmap Background_image {
+            get {
+                object obj = ResourceManager.GetObject("Background_image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
         internal static System.Drawing.Bitmap P1 {
             get {
                 object obj = ResourceManager.GetObject("P1", resourceCulture);

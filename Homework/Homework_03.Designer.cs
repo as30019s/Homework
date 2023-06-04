@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Homework_03_Frm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btn_Menu_Wine = new System.Windows.Forms.Button();
             this.btn_Menu_Whisky = new System.Windows.Forms.Button();
@@ -73,7 +74,10 @@
             // 
             // btn_Menu_Wine
             // 
-            this.btn_Menu_Wine.Font = new System.Drawing.Font("標楷體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btn_Menu_Wine.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Menu_Wine.BackgroundImage")));
+            this.btn_Menu_Wine.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_Menu_Wine.Font = new System.Drawing.Font("標楷體", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btn_Menu_Wine.ForeColor = System.Drawing.Color.Cyan;
             this.btn_Menu_Wine.Location = new System.Drawing.Point(102, 135);
             this.btn_Menu_Wine.Name = "btn_Menu_Wine";
             this.btn_Menu_Wine.Size = new System.Drawing.Size(90, 100);
@@ -84,7 +88,10 @@
             // 
             // btn_Menu_Whisky
             // 
-            this.btn_Menu_Whisky.Font = new System.Drawing.Font("標楷體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btn_Menu_Whisky.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Menu_Whisky.BackgroundImage")));
+            this.btn_Menu_Whisky.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_Menu_Whisky.Font = new System.Drawing.Font("標楷體", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btn_Menu_Whisky.ForeColor = System.Drawing.Color.Cyan;
             this.btn_Menu_Whisky.Location = new System.Drawing.Point(6, 135);
             this.btn_Menu_Whisky.Name = "btn_Menu_Whisky";
             this.btn_Menu_Whisky.Size = new System.Drawing.Size(90, 100);
@@ -95,7 +102,10 @@
             // 
             // btn_Menu_Tequila
             // 
-            this.btn_Menu_Tequila.Font = new System.Drawing.Font("標楷體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btn_Menu_Tequila.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Menu_Tequila.BackgroundImage")));
+            this.btn_Menu_Tequila.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_Menu_Tequila.Font = new System.Drawing.Font("標楷體", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btn_Menu_Tequila.ForeColor = System.Drawing.Color.Cyan;
             this.btn_Menu_Tequila.Location = new System.Drawing.Point(102, 29);
             this.btn_Menu_Tequila.Name = "btn_Menu_Tequila";
             this.btn_Menu_Tequila.Size = new System.Drawing.Size(90, 100);
@@ -106,8 +116,10 @@
             // 
             // btn_Menu_beer
             // 
+            this.btn_Menu_beer.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Menu_beer.BackgroundImage")));
             this.btn_Menu_beer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_Menu_beer.Font = new System.Drawing.Font("標楷體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btn_Menu_beer.Font = new System.Drawing.Font("標楷體", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btn_Menu_beer.ForeColor = System.Drawing.Color.Cyan;
             this.btn_Menu_beer.Location = new System.Drawing.Point(6, 29);
             this.btn_Menu_beer.Name = "btn_Menu_beer";
             this.btn_Menu_beer.Size = new System.Drawing.Size(90, 100);
@@ -263,7 +275,7 @@
             this.panel4.Size = new System.Drawing.Size(339, 244);
             this.panel4.TabIndex = 7;
             // 
-            // Form1
+            // Homework_03_Frm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -273,7 +285,7 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
-            this.Name = "Form1";
+            this.Name = "Homework_03_Frm";
             this.Text = "Bar POS";
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);

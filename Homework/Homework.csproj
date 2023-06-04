@@ -260,7 +260,22 @@
     <None Include="Resources\P7.JPEG" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\audio.wav" />
+    <None Include="Resources\Background image.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\P3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\P4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\P5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\P6.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\P7.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
