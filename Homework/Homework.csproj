@@ -245,21 +245,6 @@
     <None Include="Resources\P2.JPG" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\P3.JPEG" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\P4.JPEG" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\P5.JPEG" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\P6.JPEG" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\P7.JPEG" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Background image.jpg" />
   </ItemGroup>
   <ItemGroup>
