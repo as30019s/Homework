@@ -33,6 +33,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btn_homework_15 = new System.Windows.Forms.Button();
             this.btn_pictureViewer = new System.Windows.Forms.Button();
             this.btn_homework_12 = new System.Windows.Forms.Button();
             this.btn_homework_10 = new System.Windows.Forms.Button();
@@ -48,7 +49,6 @@
             this.btn_homework_01 = new System.Windows.Forms.Button();
             this.btn_homework_02 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btn_homework_15 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -94,7 +94,8 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.BackgroundImage = global::Homework.Properties.Resources.Background_image;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -121,6 +122,8 @@
             // 
             // panel2
             // 
+            this.panel2.BackgroundImage = global::Homework.Properties.Resources.Background_image;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.btn_homework_15);
             this.panel2.Controls.Add(this.btn_pictureViewer);
@@ -142,6 +145,16 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(260, 532);
             this.panel2.TabIndex = 4;
+            // 
+            // btn_homework_15
+            // 
+            this.btn_homework_15.Location = new System.Drawing.Point(30, 450);
+            this.btn_homework_15.Name = "btn_homework_15";
+            this.btn_homework_15.Size = new System.Drawing.Size(200, 23);
+            this.btn_homework_15.TabIndex = 14;
+            this.btn_homework_15.Text = "Homework_15_Alarm";
+            this.btn_homework_15.UseVisualStyleBackColor = true;
+            this.btn_homework_15.Click += new System.EventHandler(this.btn_homework_15_Click);
             // 
             // btn_pictureViewer
             // 
@@ -285,6 +298,8 @@
             // 
             // panel3
             // 
+            this.panel3.BackgroundImage = global::Homework.Properties.Resources.Background_image;
+            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 0);
@@ -292,24 +307,14 @@
             this.panel3.Size = new System.Drawing.Size(1160, 532);
             this.panel3.TabIndex = 0;
             // 
-            // btn_homework_15
-            // 
-            this.btn_homework_15.Location = new System.Drawing.Point(30, 450);
-            this.btn_homework_15.Name = "btn_homework_15";
-            this.btn_homework_15.Size = new System.Drawing.Size(200, 23);
-            this.btn_homework_15.TabIndex = 14;
-            this.btn_homework_15.Text = "Homework_15_Alarm";
-            this.btn_homework_15.UseVisualStyleBackColor = true;
-            this.btn_homework_15.Click += new System.EventHandler(this.btn_homework_15_Click);
-            // 
             // Homework_ControlList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Homework.Properties.Resources.Background_image;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1424, 681);
             this.Controls.Add(this.splitContainer1);
+            this.DoubleBuffered = true;
             this.Name = "Homework_ControlList";
             this.Text = "Homework Control List";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
