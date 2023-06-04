@@ -33,6 +33,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btn_pictureViewer = new System.Windows.Forms.Button();
+            this.btn_homework_12 = new System.Windows.Forms.Button();
+            this.btn_homework_10 = new System.Windows.Forms.Button();
+            this.btn_homework_06 = new System.Windows.Forms.Button();
             this.btn_homework_11 = new System.Windows.Forms.Button();
             this.btn_homework_14 = new System.Windows.Forms.Button();
             this.btn_homework_09 = new System.Windows.Forms.Button();
@@ -44,6 +48,7 @@
             this.btn_homework_01 = new System.Windows.Forms.Button();
             this.btn_homework_02 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btn_homework_15 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -107,12 +112,17 @@
             // 
             this.splitContainer2.Panel2.Controls.Add(this.panel3);
             this.splitContainer2.Size = new System.Drawing.Size(1424, 532);
-            this.splitContainer2.SplitterDistance = 264;
+            this.splitContainer2.SplitterDistance = 260;
             this.splitContainer2.TabIndex = 0;
             // 
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.btn_homework_15);
+            this.panel2.Controls.Add(this.btn_pictureViewer);
+            this.panel2.Controls.Add(this.btn_homework_12);
+            this.panel2.Controls.Add(this.btn_homework_10);
+            this.panel2.Controls.Add(this.btn_homework_06);
             this.panel2.Controls.Add(this.btn_homework_11);
             this.panel2.Controls.Add(this.btn_homework_14);
             this.panel2.Controls.Add(this.btn_homework_09);
@@ -126,12 +136,52 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(264, 532);
+            this.panel2.Size = new System.Drawing.Size(260, 532);
             this.panel2.TabIndex = 4;
+            // 
+            // btn_pictureViewer
+            // 
+            this.btn_pictureViewer.Location = new System.Drawing.Point(30, 390);
+            this.btn_pictureViewer.Name = "btn_pictureViewer";
+            this.btn_pictureViewer.Size = new System.Drawing.Size(200, 23);
+            this.btn_pictureViewer.TabIndex = 13;
+            this.btn_pictureViewer.Text = "Homework_13_Picture Viewer";
+            this.btn_pictureViewer.UseVisualStyleBackColor = true;
+            this.btn_pictureViewer.Click += new System.EventHandler(this.btn_pictureViewer_Click);
+            // 
+            // btn_homework_12
+            // 
+            this.btn_homework_12.Location = new System.Drawing.Point(30, 360);
+            this.btn_homework_12.Name = "btn_homework_12";
+            this.btn_homework_12.Size = new System.Drawing.Size(200, 23);
+            this.btn_homework_12.TabIndex = 12;
+            this.btn_homework_12.Text = "Homework_12_小畫家";
+            this.btn_homework_12.UseVisualStyleBackColor = true;
+            this.btn_homework_12.Click += new System.EventHandler(this.btn_homework_12_Click);
+            // 
+            // btn_homework_10
+            // 
+            this.btn_homework_10.Location = new System.Drawing.Point(30, 300);
+            this.btn_homework_10.Name = "btn_homework_10";
+            this.btn_homework_10.Size = new System.Drawing.Size(200, 23);
+            this.btn_homework_10.TabIndex = 11;
+            this.btn_homework_10.Text = "Homework_10_Screen Saver";
+            this.btn_homework_10.UseVisualStyleBackColor = true;
+            this.btn_homework_10.Click += new System.EventHandler(this.btn_homework_10_Click);
+            // 
+            // btn_homework_06
+            // 
+            this.btn_homework_06.Location = new System.Drawing.Point(30, 180);
+            this.btn_homework_06.Name = "btn_homework_06";
+            this.btn_homework_06.Size = new System.Drawing.Size(200, 23);
+            this.btn_homework_06.TabIndex = 10;
+            this.btn_homework_06.Text = "Homework_06_StudentsGrade List";
+            this.btn_homework_06.UseVisualStyleBackColor = true;
+            this.btn_homework_06.Click += new System.EventHandler(this.btn_homework_06_Click);
             // 
             // btn_homework_11
             // 
-            this.btn_homework_11.Location = new System.Drawing.Point(31, 312);
+            this.btn_homework_11.Location = new System.Drawing.Point(30, 330);
             this.btn_homework_11.Name = "btn_homework_11";
             this.btn_homework_11.Size = new System.Drawing.Size(200, 23);
             this.btn_homework_11.TabIndex = 9;
@@ -141,7 +191,7 @@
             // 
             // btn_homework_14
             // 
-            this.btn_homework_14.Location = new System.Drawing.Point(31, 368);
+            this.btn_homework_14.Location = new System.Drawing.Point(30, 420);
             this.btn_homework_14.Name = "btn_homework_14";
             this.btn_homework_14.Size = new System.Drawing.Size(200, 23);
             this.btn_homework_14.TabIndex = 8;
@@ -151,7 +201,7 @@
             // 
             // btn_homework_09
             // 
-            this.btn_homework_09.Location = new System.Drawing.Point(31, 258);
+            this.btn_homework_09.Location = new System.Drawing.Point(30, 270);
             this.btn_homework_09.Name = "btn_homework_09";
             this.btn_homework_09.Size = new System.Drawing.Size(200, 23);
             this.btn_homework_09.TabIndex = 7;
@@ -161,7 +211,7 @@
             // 
             // btn_homework_08
             // 
-            this.btn_homework_08.Location = new System.Drawing.Point(31, 229);
+            this.btn_homework_08.Location = new System.Drawing.Point(30, 240);
             this.btn_homework_08.Name = "btn_homework_08";
             this.btn_homework_08.Size = new System.Drawing.Size(200, 23);
             this.btn_homework_08.TabIndex = 6;
@@ -171,7 +221,7 @@
             // 
             // btn_homework_05
             // 
-            this.btn_homework_05.Location = new System.Drawing.Point(27, 144);
+            this.btn_homework_05.Location = new System.Drawing.Point(30, 150);
             this.btn_homework_05.Name = "btn_homework_05";
             this.btn_homework_05.Size = new System.Drawing.Size(200, 23);
             this.btn_homework_05.TabIndex = 5;
@@ -181,7 +231,7 @@
             // 
             // btn_homework_07
             // 
-            this.btn_homework_07.Location = new System.Drawing.Point(31, 200);
+            this.btn_homework_07.Location = new System.Drawing.Point(30, 210);
             this.btn_homework_07.Name = "btn_homework_07";
             this.btn_homework_07.Size = new System.Drawing.Size(200, 23);
             this.btn_homework_07.TabIndex = 4;
@@ -191,7 +241,7 @@
             // 
             // btn_Homework_04
             // 
-            this.btn_Homework_04.Location = new System.Drawing.Point(27, 115);
+            this.btn_Homework_04.Location = new System.Drawing.Point(30, 120);
             this.btn_Homework_04.Name = "btn_Homework_04";
             this.btn_Homework_04.Size = new System.Drawing.Size(200, 23);
             this.btn_Homework_04.TabIndex = 3;
@@ -201,7 +251,7 @@
             // 
             // btn_homework_03
             // 
-            this.btn_homework_03.Location = new System.Drawing.Point(27, 86);
+            this.btn_homework_03.Location = new System.Drawing.Point(30, 90);
             this.btn_homework_03.Name = "btn_homework_03";
             this.btn_homework_03.Size = new System.Drawing.Size(200, 23);
             this.btn_homework_03.TabIndex = 2;
@@ -211,7 +261,7 @@
             // 
             // btn_homework_01
             // 
-            this.btn_homework_01.Location = new System.Drawing.Point(27, 28);
+            this.btn_homework_01.Location = new System.Drawing.Point(30, 30);
             this.btn_homework_01.Name = "btn_homework_01";
             this.btn_homework_01.Size = new System.Drawing.Size(200, 23);
             this.btn_homework_01.TabIndex = 0;
@@ -221,7 +271,7 @@
             // 
             // btn_homework_02
             // 
-            this.btn_homework_02.Location = new System.Drawing.Point(27, 57);
+            this.btn_homework_02.Location = new System.Drawing.Point(30, 60);
             this.btn_homework_02.Name = "btn_homework_02";
             this.btn_homework_02.Size = new System.Drawing.Size(200, 23);
             this.btn_homework_02.TabIndex = 1;
@@ -235,8 +285,18 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1156, 532);
+            this.panel3.Size = new System.Drawing.Size(1160, 532);
             this.panel3.TabIndex = 0;
+            // 
+            // btn_homework_15
+            // 
+            this.btn_homework_15.Location = new System.Drawing.Point(30, 450);
+            this.btn_homework_15.Name = "btn_homework_15";
+            this.btn_homework_15.Size = new System.Drawing.Size(200, 23);
+            this.btn_homework_15.TabIndex = 14;
+            this.btn_homework_15.Text = "Homework_15_Alarm";
+            this.btn_homework_15.UseVisualStyleBackColor = true;
+            this.btn_homework_15.Click += new System.EventHandler(this.btn_homework_15_Click);
             // 
             // Homework_ControlList
             // 
@@ -279,6 +339,11 @@
         private System.Windows.Forms.Button btn_homework_09;
         private System.Windows.Forms.Button btn_homework_14;
         private System.Windows.Forms.Button btn_homework_11;
+        private System.Windows.Forms.Button btn_homework_06;
+        private System.Windows.Forms.Button btn_homework_10;
+        private System.Windows.Forms.Button btn_homework_12;
+        private System.Windows.Forms.Button btn_pictureViewer;
+        private System.Windows.Forms.Button btn_homework_15;
     }
 }
 

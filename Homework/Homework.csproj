@@ -77,6 +77,12 @@
     <Compile Include="Homework_05.Designer.cs">
       <DependentUpon>Homework_05.cs</DependentUpon>
     </Compile>
+    <Compile Include="Homework_06.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Homework_06.Designer.cs">
+      <DependentUpon>Homework_06.cs</DependentUpon>
+    </Compile>
     <Compile Include="Homework_07.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,17 +101,41 @@
     <Compile Include="Homework_09.Designer.cs">
       <DependentUpon>Homework_09.cs</DependentUpon>
     </Compile>
+    <Compile Include="Homework_10.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Homework_10.Designer.cs">
+      <DependentUpon>Homework_10.cs</DependentUpon>
+    </Compile>
     <Compile Include="Homework_11.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Homework_11.Designer.cs">
       <DependentUpon>Homework_11.cs</DependentUpon>
     </Compile>
+    <Compile Include="Homework_12.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Homework_12.Designer.cs">
+      <DependentUpon>Homework_12.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Homework_13.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Homework_13.Designer.cs">
+      <DependentUpon>Homework_13.cs</DependentUpon>
+    </Compile>
     <Compile Include="Homework_14.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Homework_14.Designer.cs">
       <DependentUpon>Homework_14.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Homework_15.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Homework_15.Designer.cs">
+      <DependentUpon>Homework_15.cs</DependentUpon>
     </Compile>
     <Compile Include="Homework_ControlList.cs">
       <SubType>Form</SubType>
@@ -143,6 +173,9 @@
     <EmbeddedResource Include="Homework_05.resx">
       <DependentUpon>Homework_05.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Homework_06.resx">
+      <DependentUpon>Homework_06.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Homework_07.resx">
       <DependentUpon>Homework_07.cs</DependentUpon>
     </EmbeddedResource>
@@ -152,11 +185,23 @@
     <EmbeddedResource Include="Homework_09.resx">
       <DependentUpon>Homework_09.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Homework_10.resx">
+      <DependentUpon>Homework_10.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Homework_11.resx">
       <DependentUpon>Homework_11.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Homework_12.resx">
+      <DependentUpon>Homework_12.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Homework_13.resx">
+      <DependentUpon>Homework_13.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Homework_14.resx">
       <DependentUpon>Homework_14.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Homework_15.resx">
+      <DependentUpon>Homework_15.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Homework_ControlList.resx">
       <DependentUpon>Homework_ControlList.cs</DependentUpon>
@@ -189,6 +234,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\P1.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\P2.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\P3.JPEG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\P4.JPEG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\P5.JPEG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\P6.JPEG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\P7.JPEG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\audio.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

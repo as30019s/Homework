@@ -19,217 +19,118 @@ namespace Homework
 
         private void btn_homework_01_Click(object sender, EventArgs e)
         {
-            // close other opening form
-            while (splitContainer2.Panel2.Controls.Count > 0)
-                splitContainer2.Panel2.Controls[0].Dispose();
-
             Homework_01_Frm frm_01 = new Homework_01_Frm();
-
-            //非最上層
-            frm_01.TopLevel = false;
-
-            //顯示From，要加上去才會顯示Form
-            frm_01.Visible = true;
-
-            //設定From位置
-            frm_01.Top = 0;
-            frm_01.Left = 0;
-
-            splitContainer2.Panel2.Controls.Add(frm_01);
+            frmCall(frm_01);
         }
 
         private void btn_homework_02_Click(object sender, EventArgs e)
         {
-            // close other opening form
-            while (splitContainer2.Panel2.Controls.Count > 0)
-                splitContainer2.Panel2.Controls[0].Dispose();
-
             Homework_02_Frm frm_02 = new Homework_02_Frm();
-
-            //非最上層
-            frm_02.TopLevel = false;
-
-            //顯示From，要加上去才會顯示Form
-            frm_02.Visible = true;
-
-            //設定From位置
-            frm_02.Top = 0;
-            frm_02.Left = 0;
-
-            splitContainer2.Panel2.Controls.Add(frm_02);
+            frmCall(frm_02);
         }
 
         private void btn_homework_03_Click(object sender, EventArgs e)
         {
-            // close other opening form
-            while (splitContainer2.Panel2.Controls.Count > 0)
-                splitContainer2.Panel2.Controls[0].Dispose();
-
             Homework_03_Frm frm_03 = new Homework_03_Frm();
-
-            //非最上層
-            frm_03.TopLevel = false;
-
-            //顯示From，要加上去才會顯示Form
-            frm_03.Visible = true;
-
-            //設定From位置
-            frm_03.Top = 0;
-            frm_03.Left = 0;
-
-            splitContainer2.Panel2.Controls.Add(frm_03);
+            frmCall(frm_03);
         }
 
         private void btn_Homework_04_Click(object sender, EventArgs e)
         {
-            // close other opening form
-            while (splitContainer2.Panel2.Controls.Count > 0)
-                splitContainer2.Panel2.Controls[0].Dispose();
-
             Homework_04_Frm frm_04 = new Homework_04_Frm();
-
-            //非最上層
-            frm_04.TopLevel = false;
-
-            //顯示From，要加上去才會顯示Form
-            frm_04.Visible = true;
-
-            //設定From位置
-            frm_04.Top = 0;
-            frm_04.Left = 0;
-
-            splitContainer2.Panel2.Controls.Add(frm_04);
+            frmCall(frm_04);
         }
 
         private void btn_homework_05_Click(object sender, EventArgs e)
         {
-            // close other opening form
-            while (splitContainer2.Panel2.Controls.Count > 0)
-                splitContainer2.Panel2.Controls[0].Dispose();
-
             Homework_05_Frm frm_05 = new Homework_05_Frm();
-
-            //非最上層
-            frm_05.TopLevel = false;
-
-            //顯示From，要加上去才會顯示Form
-            frm_05.Visible = true;
-
-            //設定From位置
-            frm_05.Top = 0;
-            frm_05.Left = 0;
-
-            splitContainer2.Panel2.Controls.Add(frm_05);
+            frmCall(frm_05);
+        }
+        private void btn_homework_06_Click(object sender, EventArgs e)
+        {
+            Homework_06_Frm frm_06 = new Homework_06_Frm();
+            frmCall(frm_06);
         }
 
 
         private void btn_homework_07_Click(object sender, EventArgs e)
         {
-            // close other opening form
-            while (splitContainer2.Panel2.Controls.Count > 0)
-                splitContainer2.Panel2.Controls[0].Dispose();
-
             Homework_07_Frm frm_07 = new Homework_07_Frm();
-
-            //非最上層
-            frm_07.TopLevel = false;
-
-            //顯示From，要加上去才會顯示Form
-            frm_07.Visible = true;
-
-            //設定From位置
-            frm_07.Top = 0;
-            frm_07.Left = 0;
-
-            splitContainer2.Panel2.Controls.Add(frm_07);
+            frmCall(frm_07);
         }
 
         private void btn_homework_08_Click(object sender, EventArgs e)
         {
-            // close other opening form
-            while (splitContainer2.Panel2.Controls.Count > 0)
-                splitContainer2.Panel2.Controls[0].Dispose();
-
             Homework_08_Frm frm_08 = new Homework_08_Frm();
-
-            //非最上層
-            frm_08.TopLevel = false;
-
-            //顯示From，要加上去才會顯示Form
-            frm_08.Visible = true;
-
-            //設定From位置
-            frm_08.Top = 0;
-            frm_08.Left = 0;
-
-            splitContainer2.Panel2.Controls.Add(frm_08);
-
+            frmCall(frm_08);
         }
 
         private void btn_homework_09_Click(object sender, EventArgs e)
         {
-            // close other opening form
-            while (splitContainer2.Panel2.Controls.Count > 0)
-                splitContainer2.Panel2.Controls[0].Dispose();
-
             Homework_09_Frm frm_09 = new Homework_09_Frm();
-
-            //非最上層
-            frm_09.TopLevel = false;
-
-            //顯示From，要加上去才會顯示Form
-            frm_09.Visible = true;
-
-            //設定From位置
-            frm_09.Top = 0;
-            frm_09.Left = 0;
-
-            splitContainer2.Panel2.Controls.Add(frm_09);
-
+            frmCall(frm_09);
         }
-        private void btn_homework_11_Click(object sender, EventArgs e)
+
+        private void btn_homework_10_Click(object sender, EventArgs e)
         {
             // close other opening form
             while (splitContainer2.Panel2.Controls.Count > 0)
                 splitContainer2.Panel2.Controls[0].Dispose();
 
+            Homework_10_Frm frm_10 = new Homework_10_Frm();
+
+            frm_10.Show();
+        }
+
+        private void btn_homework_11_Click(object sender, EventArgs e)
+        {
             Homework_11_Frm frm_11 = new Homework_11_Frm();
+            frmCall(frm_11);
+        }
 
-            //非最上層
-            frm_11.TopLevel = false;
+        private void btn_homework_12_Click(object sender, EventArgs e)
+        {
+            Homework_12_Frm frm_12 = new Homework_12_Frm();
+            frmCall(frm_12);
+        }
 
-            //顯示From，要加上去才會顯示Form
-            frm_11.Visible = true;
-
-            //設定From位置
-            frm_11.Top = 0;
-            frm_11.Left = 0;
-
-            splitContainer2.Panel2.Controls.Add(frm_11);
-
+        private void btn_pictureViewer_Click(object sender, EventArgs e)
+        {
+            Homework_13_Frm frm_13 = new Homework_13_Frm();
+            frmCall(frm_13);
         }
 
 
         private void btn_homework_14_Click(object sender, EventArgs e)
         {
-            // close other opening form
+            Homework_14_Frm frm_14 = new Homework_14_Frm();
+            frmCall(frm_14);
+        }
+
+        private void btn_homework_15_Click(object sender, EventArgs e)
+        {
+            Homework_15_Frm frm_15 = new Homework_15_Frm();
+            frmCall(frm_15);
+        }
+
+        public void frmCall(Form frm)
+        {
             while (splitContainer2.Panel2.Controls.Count > 0)
                 splitContainer2.Panel2.Controls[0].Dispose();
 
-            Homework_14_Frm frm_14 = new Homework_14_Frm();
-
             //非最上層
-            frm_14.TopLevel = false;
+            frm.TopLevel = false;
 
             //顯示From，要加上去才會顯示Form
-            frm_14.Visible = true;
+            frm.Visible = true;
 
             //設定From位置
-            frm_14.Top = 0;
-            frm_14.Left = 0;
+            frm.Top = 0;
+            frm.Left = 0;
 
-            splitContainer2.Panel2.Controls.Add(frm_14);
+            splitContainer2.Panel2.Controls.Add(frm);
         }
+
 
     }
 }

@@ -20,6 +20,7 @@ namespace Homework
         public Homework_05_Frm()
         {
             InitializeComponent();
+            
         }
 
 
@@ -75,8 +76,27 @@ namespace Homework
         }
         private void btn_randomAddData_Click(object sender, EventArgs e)
         {
-
+            Random rand = new Random();
+            string chName = (lsStudent.Count()+1).ToString();
+            int chScore = rand.Next(0, 101);
+            int enScore = rand.Next(0, 101);
+            int mathScore = rand.Next(0, 101);
+            scoreMethod(chName, chScore, enScore, mathScore);
         }
+
+        private void btn_randomAddData20_Click(object sender, EventArgs e)
+        {
+            Random rand = new Random();
+            for (int i = 0; i < 20; i++)
+            {
+                string chName = (lsStudent.Count() + 1).ToString();
+                int chScore = rand.Next(0, 101);
+                int enScore = rand.Next(0, 101);
+                int mathScore = rand.Next(0, 101);
+                scoreMethod(chName, chScore, enScore, mathScore);
+            }
+        }
+
 
         public void scoreMethod(string chName, int chScore, int enScore, int mathScore)
         {
@@ -93,14 +113,14 @@ namespace Homework
             foreach (Students S in lsStudent)
             {
                 int[] scores = new int[3] { S.ChScore, S.EnScore, S.MathScore };
-                result += $"{chName,-4} ";
+                result += $"{S.Name,-6} ";
                 totalScore = 0;
                 for (int i = 0; i < 3; i++)
                 {
                     result += $"{scores[i],8}";
                     totalScore += scores[i];
                 }
-                result += $"{totalScore,8} {Math.Round(Convert.ToDouble(totalScore) / 3, 1),7} ";
+                result += $"{totalScore,8} {Math.Round(Convert.ToDouble(totalScore) / 3, 1),8} ";
 
                 int maxScore = 0;
                 int minScore = 0;
@@ -128,7 +148,7 @@ namespace Homework
                 }
                 if (maxScore == minScore)
                 {
-                    result += $"各科成績相同：{S.ChScore,2}\r\n";
+                    result += $"      各科成績相同：{S.ChScore}\r\n";
                 }
                 else
                 {
@@ -143,20 +163,54 @@ namespace Homework
                             minScoreSubject += $"{subjects[i]} ";
                         }
                     }
-                    result += $" {minScoreSubject,4}{minScore}    ";
+                    result += $" {minScoreSubject,6}{minScore}    ";
                     result += $" {maxScoreSubject}{maxScore}\r\n";
                 }
 
             }
-            if (textB_result.Height < 200)
-            {
-                textB_result.Height += 20;
-            }
+
+
+            label_result.Text = result;
+            label_result.BorderStyle = BorderStyle.FixedSingle;
+            if (lsStudent.Count > 0)
+                btn_statistic.Enabled = true;
             else
             {
+                btn_statistic.Enabled = false;
             }
-            textB_result.BorderStyle = BorderStyle.FixedSingle;
-            textB_result.Text = result;
+            textB_Summary.Text = "";
+        }
+
+        private void btn_reset_Click(object sender, EventArgs e)
+        {
+            textB_Summary.Text ="";
+            label_result.Text = "";
+            label_result.Height = 0;
+            label_result.BorderStyle = BorderStyle.None;
+            lsStudent.Clear();
+            btn_statistic.Enabled = false;
+        }
+
+        private void btn_statistic_Click(object sender, EventArgs e)
+        {
+            string result = "";
+
+            int totalChScore = lsStudent.Sum(x => x.ChScore);
+            int totalEnScore = lsStudent.Sum(x => x.EnScore);
+            int totalMathScore = lsStudent.Sum(x => x.MathScore);
+            int maxChScore = lsStudent.Max(x => x.ChScore);
+            int maxEnScore = lsStudent.Max(x => x.EnScore);
+            int maxMathScore = lsStudent.Max(x => x.MathScore);
+            int minChScore = lsStudent.Min(x => x.ChScore);
+            int minEnScore = lsStudent.Min( x => x.EnScore);
+            int minMathScore = lsStudent.Min( (x) => x.MathScore);
+
+            result += $"總分{totalChScore,12}{totalEnScore,8}{totalMathScore,8}\r\n" +
+                $"平均{totalChScore / lsStudent.Count,12}{totalEnScore / lsStudent.Count,8}{totalMathScore / lsStudent.Count,8}\r\n" +
+                $"最高分{maxChScore,10}{maxEnScore,8}{maxMathScore,8}\r\n" +
+                $"最低分{minChScore,10}{minEnScore,8}{minMathScore,8}";
+
+            textB_Summary.Text = result;
         }
     }
 }

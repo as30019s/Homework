@@ -15,6 +15,12 @@ namespace Homework
         public Homework_11_Frm()
         {
             InitializeComponent();
+            TSSLabel_time.Text = DateTime.Now.ToString();
+        }
+
+        private void timer_statusTime_Tick(object sender, EventArgs e)
+        {
+            TSSLabel_time.Text = DateTime.Now.ToString();
         }
     }
 }
