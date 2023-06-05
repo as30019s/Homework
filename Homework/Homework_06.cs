@@ -12,8 +12,11 @@ namespace Homework
 {
     public partial class Homework_06_Frm : Form
     {
+        // parameter definition
         List<Students> lsStudent = new List<Students>();
         string[] subjects = new string[3] { "國文", "英文", "數學" };
+
+        // using to check add or insert
         bool addButtonClick = true;
 
         public Homework_06_Frm()

@@ -12,6 +12,7 @@ namespace Homework
 {
     public partial class Homework_04_Frm : Form
     {
+        // parameter definition
         string chName;
         int chScore;
         int enScore;
@@ -29,10 +30,18 @@ namespace Homework
             scores = new int[3] {chScore, enScore, mathScore};
         }
 
-
+        // save data
         private void btn_Save_Click(object sender, EventArgs e)
         {
-            chName = textB_Name.Text;
+            if ( !(textB_Name.Text == ""))
+            {
+                chName = textB_Name.Text;
+            }
+            else
+            {
+                MessageBox.Show("姓名不可為空白。");
+                return;
+            }
             if (int.TryParse(textB_CH_Score.Text,out chScore) && int.TryParse(textB_EN_Score.Text, out enScore) && int.TryParse(textB_Math_Score.Text,out mathScore))
             {
                 scores = new int[3] { chScore, enScore, mathScore };
@@ -46,6 +55,7 @@ namespace Homework
                 textB_CH_Score.Text = 0.ToString();
                 textB_EN_Score.Text = 0.ToString();
                 textB_Math_Score.Text = 0.ToString();
+                return;
             }
 
             if (chScore < 0 ||  chScore > 100 || enScore < 0 || enScore > 100 || mathScore < 0 || mathScore > 100 )
@@ -57,9 +67,11 @@ namespace Homework
                 textB_CH_Score.Text = 0.ToString();
                 textB_EN_Score.Text = 0.ToString();
                 textB_Math_Score.Text = 0.ToString();
+                return;
             }
         }
 
+        // show data
         private void btn_Show_Save_Click(object sender, EventArgs e)
         {
             textB_Show_Score.Text = "";
@@ -68,11 +80,9 @@ namespace Homework
             {
                 textB_Show_Score.Text += $"{subjects[i]}： {scores[i]}\r\n";
             }
-            //textB_Show_Score.Text += $"{label_EN_Score.Text} {enScore}\r\n";
-            //textB_Show_Score.Text += $"{label_Math_Score.Text} {mathScore}\r\n";
-
         }
 
+        // show high and low score
         private void btn_HighLow_Score_Click(object sender, EventArgs e)
         {
             textB_Show_HighLow_Score.Text = "";

@@ -1,4 +1,6 @@
-﻿namespace Homework
+﻿using System.Windows.Forms;
+
+namespace Homework
 {
     partial class Homework_ControlList
     {
@@ -18,6 +20,16 @@
                 components.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;
+                return cp;
+            }
         }
 
         #region Windows Form 設計工具產生的程式碼
@@ -316,7 +328,7 @@
             this.Controls.Add(this.splitContainer1);
             this.DoubleBuffered = true;
             this.Name = "Homework_ControlList";
-            this.Text = "Homework Control List";
+            this.Text = "C";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();

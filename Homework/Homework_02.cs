@@ -109,119 +109,28 @@ namespace Homework
         // get current parameter value method
         public void getCurrentValue()
         {
-            if (double.TryParse(textB_money.Text,out totalLoanMoney))
+            if (!double.TryParse(textB_money.Text,out totalLoanMoney))
             {
-
-            }
-            else
-            {
-                if (textB_money.Text == "")
-                {
-                    totalLoanMoney = 0;
-                } else
-                {
-                    totalLoanMoney = -1;
-                }
+                totalLoanMoney = -1;
             }
 
-            if (int.TryParse(textB_year.Text, out year))
-            {
 
-            }
-            else
+            if (!int.TryParse(textB_year.Text, out year))
             {
-                if (textB_year.Text == "")
-                {
-                    year = 0;
-                }
-                else
-                {
-                    year = -1;
-                }
+                year = -1;
             }
 
-            if (double.TryParse(textB_rate.Text, out rate))
+
+            if (!double.TryParse(textB_rate.Text, out rate))
             {
-            }
-            else
-            {
-                if (textB_rate.Text == "")
-                {
-                    rate = 0;
-                }
-                else
-                {
-                    rate = -1;
-                }
+                rate = -1;
             }
 
-            if (double.TryParse(textB_payment.Text, out downpayment))
-            {
-            }
-            else
-            {
-                if (textB_payment.Text == "")
-                {
-                    downpayment = 0;
-                }
-                else
-                {
-                    downpayment = -1;
-                }
-            }
 
+            if (!double.TryParse(textB_payment.Text, out downpayment))
+            {
+                downpayment = -1;
+            }
         }
-
-        // previous method, using textchange event to each textbox for renew the value 
-        //private void textB_money_TextChanged(object sender, EventArgs e)
-        //{
-        //    if (textB_money.Text == "")
-        //    {
-        //        totalLoanMoney = 0;
-        //    }
-        //    else
-        //    {
-        //        totalLoanMoney = double.Parse(textB_money.Text);
-        //    }
-        //}
-
-        //private void textB_year_TextChanged(object sender, EventArgs e)
-        //{
-        //    if (textB_year.Text=="")
-        //    {
-        //        year =0;
-        //    }else
-        //    {
-        //        year = int.Parse(textB_year.Text);
-
-        //    }
-
-        //}
-
-        //private void textB_per_TextChanged(object sender, EventArgs e)
-        //{
-        //    if (textB_rate.Text == "")
-        //    {
-        //        rate = 0;
-        //    }
-        //    else
-        //    {
-        //        rate = double.Parse(textB_rate.Text);
-
-        //    }
-
-        //}
-
-        //private void textB_payment_TextChanged(object sender, EventArgs e)
-        //{
-        //    if (textB_payment.Text == "")
-        //    {
-        //        downpayment = 0;
-        //    }else
-        //    {
-        //        downpayment = double.Parse(textB_payment.Text);
-        //    }
-
-        //}
     }
 }

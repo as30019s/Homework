@@ -75,6 +75,7 @@ namespace Homework
             priceAndListUpdate();
         }
 
+        // Pay method
         private void btn_Pay_Cash_Click(object sender, EventArgs e)
         {
             if (totalPrice == 0)
@@ -99,6 +100,7 @@ namespace Homework
             }
         }
 
+        // Order list and total Price
         public void priceAndListUpdate()
         {
             totalPrice = 0;

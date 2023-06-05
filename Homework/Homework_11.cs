@@ -13,6 +13,11 @@ namespace Homework
 {
     public partial class Homework_11_Frm : Form
     {
+        // Dialogs
+        private OpenFileDialog openFileDialog;
+        private SaveFileDialog saveFileDialog;
+        private FontDialog fontDialog;
+
         public Homework_11_Frm()
         {
             InitializeComponent();
@@ -27,47 +32,185 @@ namespace Homework
 
         private void 新增NCtrlNToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            textB_input.Enabled = true;
+            newFile();
         }
+
 
         private void 開啟OCtrlOToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            openFileDialog.InitialDirectory = "c:\\";
-            openFileDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
-            openFileDialog.FilterIndex = 2;
-            openFileDialog.RestoreDirectory = true;
+            openFile();
+        }
 
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
+        private void 儲存SToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            saveFile();
+        }
+
+        private void 另存新檔AToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            saveFileAs();
+        }
+
+        private void 結束XToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            exitFile();
+        }
+
+        private void 字型VToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
             {
-                filePath = openFileDialog.FileName;
-                Stream fs = openFileDialog.OpenFile();
+                
+                if (fontDialog.ShowDialog() == DialogResult.OK)
+                {
+                    this.richTextBox_input.Font = fontDialog.Font;
+                }
+            }
+            catch (Exception ex)
+            {
 
-                StreamReader sr = new StreamReader(fs);
-                textB_input.Text = sr.ReadToEnd();
-                buttonEnable(true);
+            }
+            finally 
+            {
+                
             }
         }
 
-        public void buttonEnable(bool openClose)
+        // Create a new file
+        private void newFile()
         {
-            textB_input.Enabled = openClose;
-            儲存SToolStripMenuItem.Enabled = openClose;
-            另存新檔AToolStripMenuItem.Enabled = openClose;
-            列印PCtrlPToolStripMenuItem1.Enabled = openClose;
-            預覽列印VToolStripMenuItem.Enabled = openClose;
-            復原UToolStripMenuItem.Enabled = openClose;
-            取消復原RToolStripMenuItem.Enabled = openClose;
-            剪下TToolStripMenuItem.Enabled = openClose;
-            複製CToolStripMenuItem.Enabled = openClose;
-            貼上PToolStripMenuItem.Enabled = openClose;
-            全選ToolStripMenuItem.Enabled = openClose;
-            顏色CToolStripMenuItem.Enabled = openClose;
-            字型VToolStripMenuItem.Enabled = openClose;
-            toUpperUToolStripMenuItem.Enabled = openClose;
-            toLowerLToolStripMenuItem.Enabled = openClose;
-            自動換行ToolStripMenuItem.Enabled = openClose;
-            索引IToolStripMenuItem.Enabled = openClose;
-            搜尋SToolStripMenuItem.Enabled = openClose;
+            try
+            {
+                if (!string.IsNullOrEmpty(this.richTextBox_input.Text))
+                {
+                    MessageBox.Show("Need to save first!");
+                }
+                else
+                {
+                    this.richTextBox_input.Text = string.Empty;
+                    this.Text = "Untitled";
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+
+            }
+        }
+
+        // Open file
+        private void openFile()
+        {
+            try
+            {
+                openFileDialog = new OpenFileDialog();
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    this.richTextBox_input.Text = File.ReadAllText(openFileDialog.FileName);
+                    this.Text = openFileDialog.FileName;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error while trying to open file!");
+            }
+            finally 
+            {
+                openFileDialog = null;
+            }
+        }
+
+        // Save file
+        private void saveFile()
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(this.richTextBox_input.Text))
+                {
+                    saveFileDialog = new SaveFileDialog();
+                    saveFileDialog.Filter = "Text File (*.txt) | *.txt";
+                    if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        File.WriteAllText(saveFileDialog.FileName, this.richTextBox_input.Text);
+                        this.Text = saveFileDialog.FileName;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("The file is empty!");
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+
+            }
+        }
+
+        // Save as file
+        private void saveFileAs()
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(this.richTextBox_input.Text))
+                {
+                    saveFileDialog = new SaveFileDialog();
+                    saveFileDialog.Filter = "Text File (*.txt) | *.txt All Files (*.*)| *.* ";
+                    if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        File.WriteAllText(saveFileDialog.FileName, this.richTextBox_input.Text);
+                        this.Text = saveFileDialog.FileName;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("The file is empty!");
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+
+            }
+        }
+
+        // Exit
+        private void exitFile()
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(this.richTextBox_input.Text))
+                {
+                    saveFile();
+                }
+                else
+                {
+                    this.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+
+            }
+        }
+
+        private void Homework_11_Frm_Load(object sender, EventArgs e)
+        {
+            fontDialog = new FontDialog();
         }
     }
 }

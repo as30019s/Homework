@@ -14,16 +14,16 @@ namespace Homework
 {
     public partial class Homework_05_Frm : Form
     {
+        // parameter definition
         List<Students> lsStudent = new List<Students>();
         string[] subjects = new string[3] { "國文", "英文", "數學" };
 
         public Homework_05_Frm()
         {
             InitializeComponent();
-            
         }
 
-
+        // add data
         private void btn_addData_Click(object sender, EventArgs e)
         {
             string chName;
@@ -71,10 +71,9 @@ namespace Homework
                 textB_mathScore.Text = 0.ToString();
                 return;
             }
-
-
-
         }
+
+        // random add data
         private void btn_randomAddData_Click(object sender, EventArgs e)
         {
             Random rand = new Random();
@@ -100,6 +99,7 @@ namespace Homework
             }
         }
 
+        // clear all data
         private void btn_reset_Click(object sender, EventArgs e)
         {
             textB_Summary.Text = "";
@@ -110,6 +110,7 @@ namespace Homework
             btn_statistic.Enabled = false;
         }
 
+        // statistic data
         private void btn_statistic_Click(object sender, EventArgs e)
         {
             string result = "";
@@ -132,7 +133,7 @@ namespace Homework
             textB_Summary.Text = result;
         }
 
-
+        // student score struct
         public void scoreStruct(string chName, int chScore, int enScore, int mathScore)
         {
             Students stu;
@@ -145,6 +146,7 @@ namespace Homework
 
         }
 
+        // score compare and report
         public void scoreMethod()
         {
             string result = "";
@@ -208,8 +210,6 @@ namespace Homework
                 }
 
             }
-
-
             label_result.Text = result;
             label_result.BorderStyle = BorderStyle.FixedSingle;
             if (lsStudent.Count > 0)
@@ -219,8 +219,6 @@ namespace Homework
                 btn_statistic.Enabled = false;
             }
             textB_Summary.Text = "";
-
         }
-
     }
 }

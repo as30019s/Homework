@@ -15,6 +15,7 @@ namespace Homework
         public Homework_ControlList()
         {
             InitializeComponent();
+            this.SetStyle(ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer, true);
         }
 
         private void btn_homework_01_Click(object sender, EventArgs e)
