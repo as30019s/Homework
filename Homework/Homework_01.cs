@@ -16,7 +16,6 @@ namespace Homework
         {
             InitializeComponent();
         }
-
         private void btn_hello_Click(object sender, EventArgs e)
         {
             string name = textB_name.Text;

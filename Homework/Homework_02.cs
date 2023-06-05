@@ -65,7 +65,6 @@ namespace Homework
                 var result = LoanCal();
                 MessageBox.Show($"總付款：{result.totalPay}");
             }
-
         }
 
         // report button click event
@@ -86,7 +85,6 @@ namespace Homework
                 var result = LoanCal();
                 Frm_report report = new Frm_report(totalLoanMoney - downpayment, year, rate, result.monthPay, result.totalPay);
                 report.ShowDialog();
-
             }
         }
 

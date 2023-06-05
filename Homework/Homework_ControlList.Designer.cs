@@ -77,6 +77,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.BackColor = System.Drawing.Color.Transparent;
+            this.splitContainer1.Panel2.BackgroundImage = global::Homework.Properties.Resources.Background_image;
+            this.splitContainer1.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
             this.splitContainer1.Size = new System.Drawing.Size(1424, 681);
             this.splitContainer1.SplitterDistance = 145;
@@ -122,7 +124,6 @@
             // 
             // panel2
             // 
-            this.panel2.BackgroundImage = global::Homework.Properties.Resources.Background_image;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.btn_homework_15);
@@ -298,7 +299,6 @@
             // 
             // panel3
             // 
-            this.panel3.BackgroundImage = global::Homework.Properties.Resources.Background_image;
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
