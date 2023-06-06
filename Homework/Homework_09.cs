@@ -15,6 +15,7 @@ namespace Homework
     {
         string[,] layout = new string[3, 3];
         bool result = false;
+        int count;
         public Homework_09_Frm()
         {
             InitializeComponent();
@@ -77,6 +78,7 @@ namespace Homework
             int countCol = 0;
             int countSlash = 0;
             int countSlashReverse = 0;
+            count++;
 
             if (x == 0 && y == 0)
             {
@@ -230,13 +232,22 @@ namespace Homework
             if (countRow == 3 || countCol == 3 || countSlash == 3 || countSlashReverse == 3)
             {
                 return true;
-
+            }
+            else if (count == 9)
+            {
+                MessageBox.Show("平手");
+                currentUserCheck = true;
+                result = false;
+                layout = new string[3, 3];
+                count = 0;
+                Controls.Clear();
+                InitializeComponent();
+                return false;
             }
             else
             {
                 return false;
             }
-
         }
 
         void updateMethod(Button button, int x, int y) 
@@ -265,6 +276,7 @@ namespace Homework
                 currentUserCheck = true;
                 result = false;
                 layout = new string[3, 3];
+                count = 0;
                 Controls.Clear();
                 InitializeComponent();
             }
@@ -275,6 +287,7 @@ namespace Homework
             currentUserCheck = true;
             result = false;
             layout = new string[3, 3];
+            count = 0;
             Controls.Clear();
             InitializeComponent();
         }
@@ -292,6 +305,7 @@ namespace Homework
                 currentUserCheck = true;
                 result = false;
                 layout = new string[3, 3];
+                count = 0;
                 Controls.Clear();
                 InitializeComponent();
             }

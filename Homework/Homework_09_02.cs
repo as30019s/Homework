@@ -14,21 +14,26 @@ namespace Homework
 {
     public partial class Homework_09_02_Frm : Form
     {
-        string[,] layout = new string[7, 7];
+        // parameter definition
+        string[,] layout;
         List<OXGame> lsgames = new List<OXGame>();
         bool result = false;
-        int x = 60;
-        int y = 80;
+        bool currentUserCheck = true;
+        int count;
+
         public Homework_09_02_Frm()
         {
             InitializeComponent();
             btnCreate();
         }
 
-        bool currentUserCheck = true;
-
+        // create OX button
+        // using large size array and condition to limit button only create 3x3
         private void btnCreate()
         {
+            layout = new string[7, 7];
+            int x = 60;
+            int y = 80;
             for (int i = 0; i < layout.GetLength(0); i++)
             {
                 x = 60;
@@ -44,6 +49,8 @@ namespace Homework
                         this.Controls.Add(btn);
                         btn.MouseClick += Btn_MouseClick;
                         x += 85;
+
+                        // Save the created button information in the list
                         OXGame oxGame;
                         oxGame.OXbutton = btn;
                         oxGame.indexX = i;
@@ -61,6 +68,7 @@ namespace Homework
 
         private void Btn_MouseClick(object sender, MouseEventArgs e)
         {
+            // find current click button
             foreach (OXGame item in lsgames)
             {
                 if (item.OXbutton == (Button)sender)
@@ -77,51 +85,59 @@ namespace Homework
                     }
                     ((Button)sender).Enabled = false;
                     currentUserCheck = !currentUserCheck;
-                    result = checkGameResult(x, y);
-                    winnerMessage(result, layout[x, y]);
-
-
+                    result = checkGameResult(item.indexX, item.indexY);
+                    winnerMessage(result, layout[item.indexX, item.indexY]);
                 }
             }
 
         }
 
+        // use index of click button to check the game result
         public bool checkGameResult(int x, int y)
         {
             int countRow = 0;
             int countCol = 0;
             int countSlash = 0;
             int countSlashReverse = 0;
-
-            for (int i = x-2; i <= x; i++)
+            count++;
+            for (int i = 0; i < 3; i++)
             {
-                if (layout[i, y] == layout[x, y])
-                {
-                    countRow++;
-                }
-                if (layout[x, i] == layout[x, y])
-                {
-                    countCol++;
-                }
-                if (layout[i, i] == layout[x, y])
-                {
-                    countSlash++;
-                }
-                if (layout[i, 2 - i] == layout[x, y])
-                {
-                    countSlashReverse++;
-                }
-            }
+                countRow = 0;
+                countCol = 0;
+                countSlash = 0;
+                countSlashReverse = 0;
 
-            if (countRow == 3 || countCol == 3 || countSlash == 3 || countSlashReverse == 3)
-            {
-                return true;
-
+                for (int j = 0; j < 3; j++)
+                {
+                    if (layout[x - i + j, y] == layout[x, y])
+                    {
+                        countRow++;
+                    }
+                    if (layout[x, y - i + j] == layout[x, y])
+                    {
+                        countCol++;
+                    }
+                    if (layout[x - i + j, y - i + j] == layout[x, y])
+                    {
+                        countSlash++;
+                    }
+                    if (layout[x - i + j, y + i - j] == layout[x, y])
+                    {
+                        countSlashReverse++;
+                    }
+                }
+                if (countRow == 3 || countCol == 3 || countSlash == 3 || countSlashReverse == 3)
+                {
+                    return true;
+                }
+         
             }
-            else
+            if (count == 9)
             {
-                return false;
+                MessageBox.Show("平手");
+                btnReset();
             }
+            return false;
 
         }
         void winnerMessage(bool boolResult, string user)
@@ -132,8 +148,7 @@ namespace Homework
                 currentUserCheck = true;
                 result = false;
                 layout = new string[3, 3];
-                Controls.Clear();
-                InitializeComponent();
+                btnReset();
             }
         }
 
@@ -142,8 +157,7 @@ namespace Homework
             currentUserCheck = true;
             result = false;
             layout = new string[3, 3];
-            Controls.Clear();
-            InitializeComponent();
+            btnReset();
         }
 
         private void btn_exit_Click(object sender, EventArgs e)
@@ -159,12 +173,22 @@ namespace Homework
                 currentUserCheck = true;
                 result = false;
                 layout = new string[3, 3];
-                Controls.Clear();
-                InitializeComponent();
+                btnReset();
             }
             if (e.KeyValue == 27)
             {
                 this.Close();
+            }
+        }
+        private void btnReset()
+        {
+            layout = new string[7, 7];
+            currentUserCheck = true;
+            count = 0;
+            foreach (OXGame item in lsgames)
+            {
+                item.OXbutton.Enabled = true;
+                item.OXbutton.Text = string.Empty;
             }
         }
     }

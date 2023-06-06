@@ -98,7 +98,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 661);
             this.Controls.Add(this.label_fontSize);
             this.Controls.Add(this.trackBar_fontSize);
             this.Controls.Add(this.PB_currentColor);
