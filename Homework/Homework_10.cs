@@ -16,13 +16,14 @@ namespace Homework
         {
             InitializeComponent();
         }
-
-
+        
+        // Date time display
         private void timer_dateTime_Tick(object sender, EventArgs e)
         {
             label_dateTime.Text = DateTime.Now.ToString();
         }
 
+        // photo select and move step setting
         int currentPhoto = 0;
         int xStep = 5;
         int yStep = 5;

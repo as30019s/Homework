@@ -132,6 +132,11 @@ namespace Homework
             splitContainer2.Panel2.Controls.Add(frm);
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Homework_09_02_Frm frm_09_02 = new Homework_09_02_Frm();
+            frmCall(frm_09_02);
 
+        }
     }
 }

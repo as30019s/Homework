@@ -17,6 +17,10 @@ namespace Homework
         private OpenFileDialog openFileDialog;
         private SaveFileDialog saveFileDialog;
         private FontDialog fontDialog;
+        private ColorDialog colorDialog;
+
+        bool saveStatus;
+        string currentFileName = string.Empty;
 
         public Homework_11_Frm()
         {
@@ -68,7 +72,7 @@ namespace Homework
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show(ex.Message);
             }
             finally 
             {
@@ -76,12 +80,91 @@ namespace Homework
             }
         }
 
+
+        private void Homework_11_Frm_Load(object sender, EventArgs e)
+        {
+            fontDialog = new FontDialog();
+        }
+
+        private void richTextBox_input_TextChanged(object sender, EventArgs e)
+        {
+            saveStatus = false;
+        }
+
+        private void 剪下TToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBox_input.Cut();
+        }
+
+        private void 複製CToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBox_input.Copy();
+        }
+
+        private void 貼上PToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBox_input.Paste();
+        }
+
+        private void 全選ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBox_input.SelectAll();
+        }
+
+        private void 復原UToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBox_input.Undo();
+        }
+
+        private void 取消復原RToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBox_input.Redo();
+        }
+
+        private void 顏色CToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            colorDialog = new ColorDialog();
+            if (colorDialog.ShowDialog() == DialogResult.OK)
+            {
+                richTextBox_input.ForeColor = colorDialog.Color;
+            }
+        }
+
+        private void toUpperUToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBox_input.Text = richTextBox_input.Text.ToUpper();
+        }
+
+        private void toLowerLToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBox_input.Text = richTextBox_input.Text.ToLower();
+        }
+
+        private void redToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBox_input.ForeColor = Color.Red;
+        }
+
+        private void greenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBox_input.ForeColor = Color.Green;
+        }
+
+        private void blueToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBox_input.ForeColor = Color.Blue;
+        }
+
+        private void blackToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBox_input.ForeColor = Color.Black;
+        }
         // Create a new file
         private void newFile()
         {
             try
             {
-                if (!string.IsNullOrEmpty(this.richTextBox_input.Text))
+                if (!string.IsNullOrEmpty(this.richTextBox_input.Text) && !saveStatus)
                 {
                     MessageBox.Show("Need to save first!");
                 }
@@ -93,7 +176,7 @@ namespace Homework
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show(ex.Message);
             }
             finally
             {
@@ -112,13 +195,14 @@ namespace Homework
                 {
                     this.richTextBox_input.Text = File.ReadAllText(openFileDialog.FileName);
                     this.Text = openFileDialog.FileName;
+                    saveStatus = true;
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error while trying to open file!");
             }
-            finally 
+            finally
             {
                 openFileDialog = null;
             }
@@ -131,12 +215,20 @@ namespace Homework
             {
                 if (!string.IsNullOrEmpty(this.richTextBox_input.Text))
                 {
-                    saveFileDialog = new SaveFileDialog();
-                    saveFileDialog.Filter = "Text File (*.txt) | *.txt";
-                    if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                    if (this.Text != "Untitled")
                     {
-                        File.WriteAllText(saveFileDialog.FileName, this.richTextBox_input.Text);
-                        this.Text = saveFileDialog.FileName;
+                        if (saveStatus)
+                        {
+                            return;
+                        }
+                        else
+                        {
+                            File.WriteAllText(this.Text, this.richTextBox_input.Text);
+                        }
+                    }
+                    else
+                    {
+                        saveFileAs();
                     }
                 }
                 else
@@ -146,11 +238,11 @@ namespace Homework
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show(ex.Message);
             }
             finally
             {
-
+                saveStatus = true;
             }
         }
 
@@ -162,11 +254,12 @@ namespace Homework
                 if (!string.IsNullOrEmpty(this.richTextBox_input.Text))
                 {
                     saveFileDialog = new SaveFileDialog();
-                    saveFileDialog.Filter = "Text File (*.txt) | *.txt All Files (*.*)| *.* ";
+                    saveFileDialog.Filter = "Text File (*.txt) | *.txt";
                     if (saveFileDialog.ShowDialog() == DialogResult.OK)
                     {
                         File.WriteAllText(saveFileDialog.FileName, this.richTextBox_input.Text);
                         this.Text = saveFileDialog.FileName;
+                        saveStatus = true;
                     }
                 }
                 else
@@ -176,7 +269,7 @@ namespace Homework
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show(ex.Message);
             }
             finally
             {
@@ -191,16 +284,37 @@ namespace Homework
             {
                 if (!string.IsNullOrEmpty(this.richTextBox_input.Text))
                 {
-                    saveFile();
+                    if (this.Text != "Untitled")
+                    {
+                        if (saveStatus)
+                        {
+                            this.Close();
+                        }
+                        else
+                        {
+                            saveFileDialog = new SaveFileDialog();
+                            saveFileDialog.Filter = "Text File (*.txt) | *.txt";
+                            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                            {
+                                File.WriteAllText(this.Text, this.richTextBox_input.Text);
+                            }
+                            this.Close();
+                        }
+                    }
+                    else
+                    {
+                        saveFileAs();
+                    }
                 }
                 else
                 {
                     this.Close();
                 }
+                this.Close();
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show(ex.Message);
             }
             finally
             {
@@ -208,9 +322,20 @@ namespace Homework
             }
         }
 
-        private void Homework_11_Frm_Load(object sender, EventArgs e)
+        private void 列印PCtrlPToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            fontDialog = new FontDialog();
+            if (printDialog.ShowDialog() == DialogResult.OK)
+            {
+                printDocument.Print();
+            }
+        }
+
+        private void 預覽列印VToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (printPreviewDialog.ShowDialog() == DialogResult.OK)
+            {
+                printPreviewDialog.Close();
+            }
         }
     }
 }

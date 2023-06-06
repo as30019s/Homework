@@ -12,6 +12,7 @@ namespace Homework
 {
     public partial class Homework_14_Frm : Form
     {
+        // parameter definition
         Random rand = new Random();
         int answer;
         int max, min;
@@ -72,7 +73,6 @@ namespace Homework
                 {
                     MessageBox.Show($"請輸入{min}到{max}之間的整數!!!");
                 }
-
             }
         }
 
@@ -83,11 +83,9 @@ namespace Homework
 
         private static DialogResult ShowInputDialogBox(ref string input, string prompt, string title = "Title", int width = 400, int height = 150)
         {
-            //This function creates the custom input dialog box by individually creating the different window elements and adding them to the dialog box
-
             //Specify the size of the window using the parameters passed
             Size size = new Size(width, height);
-            //Create a new form using a System.Windows Form
+            //Create a new form
             Form inputBox = new Form();
 
             inputBox.FormBorderStyle = FormBorderStyle.FixedDialog;

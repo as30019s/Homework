@@ -3,13 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Homework
 {
-
-    public class Service
-    {
-    }
     public class DrinkMenu
     {
         public string Name;
@@ -25,5 +22,11 @@ namespace Homework
         public int MathScore;
     }
 
+    public struct OXGame
+    {
+        public Button OXbutton;
+        public int indexX;
+        public int indexY;
+    }
 
 }

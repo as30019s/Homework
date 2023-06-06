@@ -89,6 +89,12 @@
     <Compile Include="Homework_08.Designer.cs">
       <DependentUpon>Homework_08.cs</DependentUpon>
     </Compile>
+    <Compile Include="Homework_09_02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Homework_09_02.Designer.cs">
+      <DependentUpon>Homework_09_02.cs</DependentUpon>
+    </Compile>
     <Compile Include="Homework_09.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,6 +178,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Homework_08.resx">
       <DependentUpon>Homework_08.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Homework_09_02.resx">
+      <DependentUpon>Homework_09_02.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Homework_09.resx">
       <DependentUpon>Homework_09.cs</DependentUpon>

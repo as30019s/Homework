@@ -21,11 +21,15 @@ namespace Homework
             label_currentTime.Text = DateTime.Now.ToString("HH:mm:ss");
         }
 
+        // Update current time
         private void timer_Tick(object sender, EventArgs e)
         {
             label_currentTime.Text = DateTime.Now.ToString("HH:mm:ss");
         }
+
+        // parameter definition to countdown
         TimeSpan alarmCountdown;
+
         private void checkBox_setAlarm_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox_setAlarm.Checked == true)

@@ -12,6 +12,7 @@ namespace Homework
 {
     public partial class Homework_07_Frm : Form
     {
+        // parameter definition
         double Num1;
         double Num2;
         bool checkResult;
@@ -24,16 +25,16 @@ namespace Homework
         private void btn_plus_Click(object sender, EventArgs e)
         {
             checkResult = checkInput();
-            if (checkResult == true)
+            if (checkResult)
             {
-                textB_Answer.Text = (Num1+Num2).ToString();
+                textB_Answer.Text = (Num1 + Num2).ToString();
             }
         }
 
         private void btn_minus_Click(object sender, EventArgs e)
         {
             checkResult = checkInput();
-            if (checkResult == true)
+            if (checkResult)
             {
                 textB_Answer.Text = (Num1 - Num2).ToString();
             }
@@ -42,7 +43,7 @@ namespace Homework
         private void btn_multiply_Click(object sender, EventArgs e)
         {
             checkResult = checkInput();
-            if (checkResult == true)
+            if (checkResult)
             {
                 textB_Answer.Text = (Num1 * Num2).ToString();
             }
@@ -51,7 +52,7 @@ namespace Homework
         private void btn_divided_Click(object sender, EventArgs e)
         {
             checkResult = checkInput();
-            if (checkResult == true)
+            if (checkResult)
             {
                 if (double.Parse(textB_Num2.Text) == 0)
                 {
@@ -63,20 +64,15 @@ namespace Homework
             }
         }
 
+        // Check input number is correct
         public bool checkInput()
         {
-            if (double.TryParse(textB_Num1.Text,out double outNum1))
-            {
-                Num1 = double.Parse(textB_Num1.Text);
-            } else
+            if (!double.TryParse(textB_Num1.Text, out Num1))
             {
                 MessageBox.Show("請輸入數值。", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-            if (double.TryParse(textB_Num2.Text,out double outNum2))
-            {
-                Num2 = double.Parse(textB_Num2.Text);
-            } else
+            if (!double.TryParse(textB_Num2.Text,out Num2))
             {
                 MessageBox.Show("請輸入數值。", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;

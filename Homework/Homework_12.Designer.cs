@@ -85,6 +85,7 @@
             // 
             // label_fontSize
             // 
+            this.label_fontSize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label_fontSize.AutoSize = true;
             this.label_fontSize.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_fontSize.Location = new System.Drawing.Point(737, 230);

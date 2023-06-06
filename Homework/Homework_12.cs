@@ -23,6 +23,8 @@ namespace Homework
 
             PB_currentColor.BackColor = Color.Black;
         }
+
+        // mouse location
         int x, y;
 
         private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
@@ -63,6 +65,5 @@ namespace Homework
                 pictureBox1.Refresh();
             }
         }
-
     }
 }

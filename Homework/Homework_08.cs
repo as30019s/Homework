@@ -18,8 +18,6 @@ namespace Homework
             InitializeComponent();
         }
 
-        
-
         private void btn_checkOddEven_Click(object sender, EventArgs e)
         {
             label_resultInput.Text = "結果";
@@ -40,8 +38,6 @@ namespace Homework
             {
                 MessageBox.Show("請輸入數值","錯誤訊息",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
-
-
         }
 
         private void btn_for_Click(object sender, EventArgs e)
@@ -112,7 +108,6 @@ namespace Homework
             {
                 MessageBox.Show("請輸入數字", "錯誤訊息", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
 
         private void btn_do_Click(object sender, EventArgs e)
@@ -496,7 +491,6 @@ namespace Homework
                 result += "\n";
             }
             label_resultInput.Text = result;
-
         }
 
         private void btn_clearResult_Click(object sender, EventArgs e)

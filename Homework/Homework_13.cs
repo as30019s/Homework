@@ -14,6 +14,12 @@ namespace Homework
 {
     public partial class Homework_13_Frm : Form
     {
+        // parameter definition
+        FolderBrowserDialog folderBrowserDialog;
+        List<PictureBox> lsPB;
+        string folderPath = @"..\..\Resources\";
+        string[] imagePath;
+
         public Homework_13_Frm()
         {
             InitializeComponent();
@@ -22,8 +28,8 @@ namespace Homework
 
         public void pictureBox()
         {
-            List<PictureBox> lsPB = new List<PictureBox>();
-            string[] imagePath = Directory.GetFiles(@"..\..\Resources\", "*.jp*");
+            lsPB = new List<PictureBox>();
+            imagePath = Directory.GetFiles(folderPath, "*.jp*");
             foreach (string item in imagePath)
             {
                 PictureBox PB = new PictureBox();
@@ -36,12 +42,38 @@ namespace Homework
 
         }
 
+        // Open single form for image
         private void PB_MouseClick(object sender, MouseEventArgs e)
         {
             Form singleImgForm = new Form();
             singleImgForm.BackgroundImage = ((PictureBox)sender).Image;
             singleImgForm.BackgroundImageLayout = ImageLayout.Zoom;
             singleImgForm.Show();
+        }
+
+        private void 開啟資料夾ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            folderBrowserDialog = new FolderBrowserDialog();
+            if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
+            {
+                folderPath = folderBrowserDialog.SelectedPath;
+            }
+
+            // Clear current picture box
+            List<Control> listControls = new List<Control>();
+
+            foreach (Control control in flowLayoutPanel.Controls)
+            {
+                listControls.Add(control);
+            }
+
+            foreach (Control control in listControls)
+            {
+                flowLayoutPanel.Controls.Remove(control);
+                control.Dispose();
+            }
+
+            pictureBox();
         }
     }
 }
