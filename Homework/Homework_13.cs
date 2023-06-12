@@ -17,7 +17,7 @@ namespace Homework
         // parameter definition
         FolderBrowserDialog folderBrowserDialog;
         List<PictureBox> lsPB;
-        string folderPath = @"..\..\Resources\";
+        string folderPath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, "Resources");
         string[] imagePath;
 
         public Homework_13_Frm()
