@@ -1,10 +1,15 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Reflection;
+using System.Resources;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,11 +21,9 @@ namespace Homework
     {
         // parameter definition
         FolderBrowserDialog folderBrowserDialog;
-        List<PictureBox> lsPB;
         string folderPath;
         string[] imagePath;
-        Image[] images = { Properties.Resources.P1, Properties.Resources.P2, Properties.Resources.P3, Properties.Resources.P4, Properties.Resources.P5, Properties.Resources.P6, Properties.Resources.P7 };
-
+        
         public Homework_13_Frm()
         {
             InitializeComponent();
@@ -29,7 +32,21 @@ namespace Homework
 
         public void resourcesPicture()
         {
-            foreach (Image item in images)
+            List<Image> dynamicImageList = new List<Image>();
+            var resourceSet = Properties.Resources.ResourceManager.GetResourceSet(CultureInfo.InvariantCulture,true,false);
+            if (resourceSet != null)
+            {
+                foreach (DictionaryEntry entry in resourceSet)
+                {
+                    var value = entry.Value as Bitmap;
+                    if (value != null)
+                    {
+                        dynamicImageList.Add((Image)value);
+                    }
+                }
+            }
+
+            foreach (Image item in dynamicImageList)
             {
                 PictureBox PB = new PictureBox();
                 PB.Size = new Size(200, 200);
@@ -38,13 +55,10 @@ namespace Homework
                 flowLayoutPanel.Controls.Add(PB);
                 PB.MouseClick += PB_MouseClick;
             }
-
-
         }
 
         public void pictureBox()
         {
-            lsPB = new List<PictureBox>();
             
             foreach (string item in imagePath)
             {
