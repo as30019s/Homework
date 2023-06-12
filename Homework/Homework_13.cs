@@ -29,7 +29,7 @@ namespace Homework
         public void pictureBox()
         {
             lsPB = new List<PictureBox>();
-            imagePath = Directory.GetFiles(folderPath, "*.jp*");
+            imagePath = Directory.GetFiles(, "*.jp*");
             foreach (string item in imagePath)
             {
                 PictureBox PB = new PictureBox();
