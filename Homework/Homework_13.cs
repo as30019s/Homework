@@ -17,19 +17,35 @@ namespace Homework
         // parameter definition
         FolderBrowserDialog folderBrowserDialog;
         List<PictureBox> lsPB;
-        string folderPath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, "Resources");
+        string folderPath;
         string[] imagePath;
+        Image[] images = { Properties.Resources.P1, Properties.Resources.P2, Properties.Resources.P3, Properties.Resources.P4, Properties.Resources.P5, Properties.Resources.P6, Properties.Resources.P7 };
 
         public Homework_13_Frm()
         {
             InitializeComponent();
-            pictureBox();
+            resourcesPicture();
+        }
+
+        public void resourcesPicture()
+        {
+            foreach (Image item in images)
+            {
+                PictureBox PB = new PictureBox();
+                PB.Size = new Size(200, 200);
+                PB.SizeMode = PictureBoxSizeMode.Zoom;
+                PB.Image = item;
+                flowLayoutPanel.Controls.Add(PB);
+                PB.MouseClick += PB_MouseClick;
+            }
+
+
         }
 
         public void pictureBox()
         {
             lsPB = new List<PictureBox>();
-            imagePath = Directory.GetFiles(, "*.jp*");
+            
             foreach (string item in imagePath)
             {
                 PictureBox PB = new PictureBox();
@@ -57,6 +73,7 @@ namespace Homework
             if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
             {
                 folderPath = folderBrowserDialog.SelectedPath;
+                imagePath = Directory.GetFiles(folderPath, "*.jp*");
             }
 
             // Clear current picture box
