@@ -76,5 +76,25 @@ namespace Homework
         {
             this.Close();
         }
+
+        bool active = false;
+        int actionX;
+        int actionY;
+        private void Homework_10_Frm_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (!active)
+            {
+                actionX = e.X; 
+                actionY = e.Y;
+                active = true;
+            }
+            else
+            {
+                if (Math.Abs(e.X - actionX) > 10 || Math.Abs(e.Y - actionY) >10)
+                {
+                    this.Close();
+                }
+            }
+        }
     }
 }

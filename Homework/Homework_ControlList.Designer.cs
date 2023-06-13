@@ -62,6 +62,7 @@ namespace Homework
             this.btn_homework_01 = new System.Windows.Forms.Button();
             this.btn_homework_02 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btn_homework_14_02 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -139,6 +140,7 @@ namespace Homework
             // 
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.btn_homework_14_02);
             this.panel2.Controls.Add(this.btn_homework_09_02);
             this.panel2.Controls.Add(this.btn_homework_15);
             this.panel2.Controls.Add(this.btn_pictureViewer);
@@ -163,7 +165,7 @@ namespace Homework
             // 
             // btn_homework_09_02
             // 
-            this.btn_homework_09_02.Location = new System.Drawing.Point(30, 479);
+            this.btn_homework_09_02.Location = new System.Drawing.Point(30, 480);
             this.btn_homework_09_02.Name = "btn_homework_09_02";
             this.btn_homework_09_02.Size = new System.Drawing.Size(200, 23);
             this.btn_homework_09_02.TabIndex = 15;
@@ -331,6 +333,16 @@ namespace Homework
             this.panel3.Size = new System.Drawing.Size(1160, 532);
             this.panel3.TabIndex = 0;
             // 
+            // btn_homework_14_02
+            // 
+            this.btn_homework_14_02.Location = new System.Drawing.Point(30, 510);
+            this.btn_homework_14_02.Name = "btn_homework_14_02";
+            this.btn_homework_14_02.Size = new System.Drawing.Size(200, 23);
+            this.btn_homework_14_02.TabIndex = 16;
+            this.btn_homework_14_02.Text = "Homework_14-2_Guess";
+            this.btn_homework_14_02.UseVisualStyleBackColor = true;
+            this.btn_homework_14_02.Click += new System.EventHandler(this.btn_homework_14_02_Click);
+            // 
             // Homework_ControlList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -380,6 +392,7 @@ namespace Homework
         private System.Windows.Forms.Button btn_pictureViewer;
         private System.Windows.Forms.Button btn_homework_15;
         private Button btn_homework_09_02;
+        private Button btn_homework_14_02;
     }
 }
 

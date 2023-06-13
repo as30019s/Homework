@@ -108,6 +108,7 @@
             this.Text = "Homework_10";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.MouseCaptureChanged += new System.EventHandler(this.Homework_10_Frm_MouseCaptureChanged);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Homework_10_Frm_MouseMove);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

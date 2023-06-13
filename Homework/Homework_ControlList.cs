@@ -136,7 +136,12 @@ namespace Homework
         {
             Homework_09_02_Frm frm_09_02 = new Homework_09_02_Frm();
             frmCall(frm_09_02);
+        }
 
+        private void btn_homework_14_02_Click(object sender, EventArgs e)
+        {
+            Homework_14_02_Frm frm_14_02 = new Homework_14_02_Frm();
+            frmCall(frm_14_02);
         }
     }
 }
